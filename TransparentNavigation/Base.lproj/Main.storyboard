@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jkl-nt-eGW">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TransparentNavigation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,104 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8XC-4B-bg8">
+                                <rect key="frame" x="277" y="285" width="47" height="30"/>
+                                <state key="normal" title="Details"/>
+                                <connections>
+                                    <segue destination="Xhh-zy-6Qx" kind="show" id="6tJ-e3-mIF"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8XC-4B-bg8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XjM-Hg-JYS"/>
+                            <constraint firstItem="8XC-4B-bg8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="w8T-aH-FiT"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="LlJ-9s-DB8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1187" y="253"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="SMt-tf-T6P">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Xhh-zy-6Qx" customClass="DetailsViewController" customModule="TransparentNavigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FTe-bR-EcT"/>
+                        <viewControllerLayoutGuide type="bottom" id="krW-tV-UXn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PBZ-kg-HzC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbh-qc-qqI">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample-bg" translatesAutoresizingMaskIntoConstraints="NO" id="ctX-hx-8E9">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="8We-FV-jru"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xag-bR-oPE">
+                                        <rect key="frame" x="8" y="208" width="584" height="300"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="B42-Kz-cOH"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="xag-bR-oPE" firstAttribute="top" secondItem="ctX-hx-8E9" secondAttribute="bottom" constant="8" id="0XI-65-Knn"/>
+                                    <constraint firstAttribute="trailing" secondItem="ctX-hx-8E9" secondAttribute="trailing" id="8rG-DS-n0f"/>
+                                    <constraint firstItem="ctX-hx-8E9" firstAttribute="top" secondItem="dbh-qc-qqI" secondAttribute="top" id="CVZ-uI-JNe"/>
+                                    <constraint firstItem="xag-bR-oPE" firstAttribute="leading" secondItem="dbh-qc-qqI" secondAttribute="leading" constant="8" id="Qua-Qu-j3B"/>
+                                    <constraint firstAttribute="bottom" secondItem="xag-bR-oPE" secondAttribute="bottom" id="bi8-Gv-Y8r"/>
+                                    <constraint firstItem="ctX-hx-8E9" firstAttribute="width" secondItem="dbh-qc-qqI" secondAttribute="width" id="kMx-6N-zj4"/>
+                                    <constraint firstAttribute="trailing" secondItem="xag-bR-oPE" secondAttribute="trailing" constant="8" id="l5y-O6-EC0"/>
+                                    <constraint firstItem="ctX-hx-8E9" firstAttribute="leading" secondItem="dbh-qc-qqI" secondAttribute="leading" id="vEW-S7-d9o"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="krW-tV-UXn" firstAttribute="top" secondItem="dbh-qc-qqI" secondAttribute="bottom" id="alg-bm-bbF"/>
+                            <constraint firstItem="dbh-qc-qqI" firstAttribute="leading" secondItem="PBZ-kg-HzC" secondAttribute="leading" id="kAf-KW-3uo"/>
+                            <constraint firstItem="dbh-qc-qqI" firstAttribute="top" secondItem="PBZ-kg-HzC" secondAttribute="top" id="rJQ-4i-EhH"/>
+                            <constraint firstAttribute="trailing" secondItem="dbh-qc-qqI" secondAttribute="trailing" id="tN5-P1-kfb"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lE7-t9-NzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1881" y="228"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WhL-Jc-gra">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jkl-nt-eGW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nn3-L2-a5S">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aYV-rz-g5d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yvz-by-niU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="375" y="913"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sample-bg" width="1280" height="459"/>
+    </resources>
 </document>
